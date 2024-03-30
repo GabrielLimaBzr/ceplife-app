@@ -1,4 +1,4 @@
-package com.rangtech.ceplife;
+package com.rangtech.ceplife.exception;
 
 public class ConflitoFaixasCepException extends RuntimeException {
 

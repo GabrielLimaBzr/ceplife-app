@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 import javax.inject.Inject;
 
-import com.rangtech.ceplife.ConflitoFaixasCepException;
 import com.rangtech.ceplife.config.Transacional;
+import com.rangtech.ceplife.exception.ConflitoFaixasCepException;
 import com.rangtech.ceplife.model.UnidadeSaude;
 import com.rangtech.ceplife.repository.UnidadeSaudeRepository;
 

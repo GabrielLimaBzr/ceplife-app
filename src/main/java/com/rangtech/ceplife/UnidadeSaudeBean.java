@@ -11,6 +11,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.rangtech.ceplife.exception.ConflitoFaixasCepException;
 import com.rangtech.ceplife.model.UnidadeSaude;
 import com.rangtech.ceplife.service.UnidadeSaudeService;
 
