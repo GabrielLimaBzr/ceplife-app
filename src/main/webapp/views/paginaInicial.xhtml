@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Página Inicial</title>
+	<h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+<h:body style="background-color: #ffe9e9;">
+	<h:form>
+		<p:panel header="CEPLIFE - RANG" style="text-align:center;">
+			<p:commandButton value="Consulta por CEP"
+				action="#{unidadeSaudeBean.prepararConsulta}"
+				style="background-color: #a30202; color: white;" />
+			<p:commandButton value="Cadastro de Unidade de Saúde"
+				action="#{unidadeSaudeBean.prepararNovoCadastro}"
+				style="background-color: #a30202; color: white;" />
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Consulta de Unidade de Saúde por CEP</title>
+	<h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+
+<h:body style="background-color: white;">
+	<h:form>
+		<p:panel header="Consulta de Unidade de Saúde"
+			style="text-align:center;">
+
+			<p:messages />
+
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel value="CEP:" for="cep" />
+				<p:inputText id="cep" value="#{unidadeSaudeBean.cep}">
+					<p:keyFilter regEx="/[0-9]/" />
+				</p:inputText>
+
+				<p:commandButton value="Pesquisar"
+					actionListener="#{unidadeSaudeBean.pesquisarPorCep}"
+					update="@form" />
+
+				<p:button value="Voltar para a Página Principal"
+					outcome="paginaInicial.xhtml" />
+			</h:panelGrid>
+
+			<p:separator />
+			
+
+			<p:outputPanel id="resultado">
+				<p:outputLabel value="Unidade de Saúde: "
+					rendered="#{not empty unidadeSaudeBean.unidadeSaudeEncontrada}" />
+				<h:outputText value="#{unidadeSaudeBean.unidadeSaudeEncontrada}"
+					rendered="#{not empty unidadeSaudeBean.unidadeSaudeEncontrada}"
+					style="font-weight: bold; font-size: larger;" />
+
+				<p:outputLabel
+					value="Nenhuma unidade de saúde encontrada para o CEP informado."
+					rendered="#{empty unidadeSaudeBean.unidadeSaudeEncontrada}" />
+			</p:outputPanel>
+		</p:panel>
+	</h:form>
+</h:body>
+
+</html>

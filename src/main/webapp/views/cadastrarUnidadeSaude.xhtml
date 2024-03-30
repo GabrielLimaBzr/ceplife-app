@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Cadastro de Unidade de Saúde</title>
+	<h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+<h:body style="background-color: white;">
+	<h:form>
+		<p:panel header="Cadastro de Unidade de Saúde"
+			style="text-align:center;">
+
+			<p:messages />
+
+			<p:panelGrid columns="2" columnClasses="labelColumn,valueColumn"
+				styleClass="padrao">
+
+				<p:outputLabel value="CNES:" for="cnes" />
+				<p:inputText id="cnes" value="#{unidadeSaudeBean.unidadeSaude.cnes}"
+					required="true" />
+
+				<p:outputLabel value="Nome do Estabelecimento:"
+					for="estabelecimento" />
+				<p:inputText id="estabelecimento"
+					value="#{unidadeSaudeBean.unidadeSaude.estabelecimento}"
+					required="true" />
+
+				<p:outputLabel value="Faixa de CEP de Início:" for="faixaCepIni" />
+				<p:inputText id="faixaCepIni"
+					value="#{unidadeSaudeBean.unidadeSaude.faixaCepIni}"
+					required="true">
+					<p:keyFilter regEx="/[0-9]/" />
+				</p:inputText>
+
+				<p:outputLabel value="Faixa de CEP de Fim:" for="faixaCepFim" />
+				<p:inputText id="faixaCepFim"
+					value="#{unidadeSaudeBean.unidadeSaude.faixaCepFim}"
+					required="true">
+					<p:keyFilter regEx="/[0-9]/" />
+				</p:inputText>
+
+			</p:panelGrid>
+
+			<p:panelGrid columns="1" styleClass="padrao">
+
+				<p:commandButton value="Salvar"
+					actionListener="#{unidadeSaudeBean.salvar}" update="@form"
+					style="background-color: green; color: white; width: 100%; font-size: 16px;  border-radius: 5px; padding: 5px; margin: 4px 2px;" />
+
+				<p:button value="Voltar para a Página Principal"
+					outcome="paginaInicial.xhtml"
+					style="width: 100%; font-size: 16px;  border-radius: 5px; padding: 5px; margin: 4px 2px;" />
+
+
+			</p:panelGrid>
+		</p:panel>
+	</h:form>
+
+</h:body>
+</html>
