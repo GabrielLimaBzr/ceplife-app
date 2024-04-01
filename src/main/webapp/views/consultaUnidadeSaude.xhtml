@@ -18,7 +18,7 @@
 
 			<h:panelGrid columns="2" cellpadding="5">
 				<p:outputLabel value="CEP:" for="cep" />
-				<p:inputText id="cep" value="#{unidadeSaudeBean.cep}">
+				<p:inputText id="cep" value="#{unidadeSaudeBean.cep}" maxlength="9">
 					<p:keyFilter regEx="/[0-9]/" />
 				</p:inputText>
 

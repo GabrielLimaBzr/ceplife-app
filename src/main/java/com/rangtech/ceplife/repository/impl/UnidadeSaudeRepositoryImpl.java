@@ -29,7 +29,7 @@ public class UnidadeSaudeRepositoryImpl implements UnidadeSaudeRepository{
 
 	@Override
 	public UnidadeSaude buscarUnidadeCep(String cep) {
-	    int cepInt = Integer.parseInt(cep);
+	    Integer cepInt = Integer.parseInt(cep);
 	    Query query = entityManager.createQuery(
 	            "SELECT u FROM UnidadeSaude u WHERE :cep BETWEEN u.faixaCepIni AND u.faixaCepFim");
 	    query.setParameter("cep", cepInt);
